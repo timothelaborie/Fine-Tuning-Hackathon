@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Objectives Generator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h2>Lecture to Learning Objectives</h2>
+
+<textarea id="lectureInput" rows="30" cols="150" placeholder="Enter your lecture text here..."></textarea><br><br>
+
+<button id="submitLecture">Generate Learning Objectives</button><br><br>
+
+<textarea id="objectivesOutput" rows="10" cols="150" readonly></textarea>
+
+<script>
+    const URL = "http://127.0.0.1:8000/";
+
+    $("#submitLecture").click(function() {
+        let lecture = $("#lectureInput").val();
+        
+        $.ajax({
+            url: URL + 'learningobjectives',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ lecture: lecture }),
+            success: function (data) {
+                $("#objectivesOutput").val(data.response);
+            },
+            error: function(err) {
+                alert("Error: " + err.responseText);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
