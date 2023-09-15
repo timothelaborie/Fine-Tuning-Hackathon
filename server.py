@@ -112,75 +112,42 @@ def get_phi_response(prompt):
         batch = tokenizer(prompt, return_tensors='pt', return_attention_mask=False, max_length=2048, truncation=True)
         batch = {k: v.cuda() for k, v in batch.items()}
         with torch.cuda.amp.autocast():
-            output_tokens = model.generate(**batch, max_new_tokens=150, temperature=1.2, do_sample=True, top_p=0.97, num_return_sequences=1)
+            eos_token_id = tokenizer.eos_token_id
+            newline_ids = tokenizer.encode("\n\n", add_special_tokens=False)
+            hash_ids = tokenizer.encode("#", add_special_tokens=False)
+            hash_ids_2 = tokenizer.encode("##", add_special_tokens=False)
+            hash_ids_3 = tokenizer.encode("###", add_special_tokens=False)
+            output_tokens = model.generate(**batch, max_new_tokens=110, temperature=1.2, do_sample=True, top_p=0.97, num_return_sequences=1, bad_words_ids=
+                                           [[eos_token_id], newline_ids, hash_ids, hash_ids_2, hash_ids_3]
+                                           )
             text = tokenizer.decode(output_tokens[0], skip_special_tokens=True)
 
     print("text before split:", text)
+    # text = text.split("###Learning Objectives:")[1].strip()
     text = text.split("###Learning Objectives:")[1].strip()
+    text = re.sub(r' (?=\d+\.)', '\n', text)
     print("returning ai text:", text)
     return text
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def create_app():
     app = Flask(__name__)  # static_url_path, static_folder, template_folder...
     CORS(app, resources={r"/*": {"origins": "*", "allow_headers": "*"}})
-
-
     api = Api(app)
-
-
-
-    @app.route('/version')
-    def version():
-        return f"Job ID: {os.environ['JOB_ID']}\nCommit ID: {os.environ['COMMIT_ID']}"
-    
-
-
 
     @app.route('/learningobjectives', methods=['POST'])
     def generate_learning_objectives():
         lecture = request.json.get('lecture')
-        lecture = lecture.replace("\n", " ")
+        lecture = lecture.replace("\n", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ")
 
-
-        
-
-        if port == None:
-            prompt = "###Lecture:\n\n" + lecture[:4500] + "\n\n###Learning Objectives:\n\nDescribe"
-            response = get_phi_response(prompt)
-        else:
-            prompt = f"""Here is a lecture. Write some learning objectives for it:
-
-{lecture}"""
-            response = get_openai_response(prompt)
+        prompt = "###Lecture:\n\n" + lecture[:4500] + "\n\n###Learning Objectives:\n\nDescribe"
+        response = get_phi_response(prompt)
 
 
         return jsonify({'response': response})
 
 
     return app
-
 
 
 
