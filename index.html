@@ -5,19 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Objectives Generator</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="w-full h-full bg-black "> 
+<div class="flex flex-col justify-center items-center">
+    <h1 class="text-white text-5xl font-bold py-5">LEC TO <span class="text-blue-400">LEARN</span></h1>
+<img src="./obj.gif" alt="logo" width="500" height="200">
 
-<h2>Lecture to Learning Objectives</h2>
+  <div class="w-[500px]">
+    <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+        <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
+            <label for="comment" class="sr-only">Your comment</label>
+            <textarea id="lectureInput" rows="8" class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Enter your lecture text here..." required></textarea>
+        </div>
+        <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
+            <button id="submitLecture" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                Generate Objectives
+            </button>
+        </div>
+    </div>
+</div>
 
-<textarea id="lectureInput" rows="40" cols="150" placeholder="Enter your lecture text here...">
-Regardless of where your open working group may fall on the spectrum of formal to informal, there are certain things to consider doing and places you can look for support. Keep a record Kick off your committee by establishing a shared digital place where agendas, minutes, best practices, and other documents can reside. Avoid documents becoming orphaned in individual emails. Inventory the different ways to communicate with your community at your institution and establish when, how, and what you will communicate out from your group. One approach that has been taken by a number of open working groups is to consider an open way to document and keep a record. At the University of British Columbia, the UBC Wiki (MediaWiki) is used for sharing all agendas, activities, and members in the open. You may want to look at the Open Ed Tech Collaborative apps available via Sandstorm for collaborative editing tools that will allow you to share and edit documents. Find administrative support Booking meetings, finding rooms, sending out agendas, and other administrative tasks can make or break a group’s functionality if not done. Is there a dean or administrator on your committee that is able to offer administrative support? Who is writing announcements? Where are you sending them? Who has booked the room, ordered the coffee? Set up communication and marketing It never hurts to look good! Are there channels at your institution that will offer you marketing and promotional advice? Are there logos and creative designs already available in the open marketplace that can help you with banners and graphics? Are there institutions that can share open marketing ideas? Think about a digital or web presence as early as you can. Check the Open Education Week website or the Open Access Week Graphics for promotional materials. Provide professional development for members Depending on the composition and background of your open working group members, different professional development opportunities will be useful for sustaining the group. Think about training on the different technologies offered to sustain open at your institution. Look at conferences related to open subjects, such as the Open Textbook Summit. Other professional development opportunities may include inter-institutional events, development sprints, and workshops (such as on copyright, Creative Commons licences, and open pedagogy). 12 Engage Different Stakeholders What roles at an institution have a role in open? There are many! By expanding your open working group membership in different areas, you can bring new perspectives into the discussion around open education and create and sustain new partnerships. Do you have membership in your group to get the best uptake for open at your institution? Who should you partner or collaborate with to increase support for and interest in open? Keep the conversations going by identifying and raising open as part of institutional/departmental conversations (e.g., new technology assessments, copyright strategies, teaching and learning support). Faculties. Depending on the size of your institution, different faculties or faculty units may be key drivers and supporters of open educational resources (OER) and open educational practices (OEP). This also can open up questions of what does open education look like and how is it used in different disciplinary contexts. The use of OER is approached very differently in different faculties. Curriculum committees. Articulation committees. BCcampus. Textbook committees. Student unions or groups. Advocate for and develop awareness among students, and support students in their own advocacy efforts. You can assist students in applying for OER grants, work with students around #textbookbroke campaigns, support students in conducting environmental scans, and more. Program council. Cross-institutional committees. Bookstore. Library. As described in more detail below, the library is typically a key stakeholder in advocating for and supporting open. Teaching and learning centres. Determine how a teaching and learning centre already engages with OER. Connect OEP with OER and open education in general. Administration. Share and connect with these groups about how OER adoption relates to student retention and cost savings. The college or university administration can be a key partner in advocating for and supporting open.   
-</textarea><br><br>
-
-<button id="submitLecture">Generate Learning Objectives</button><br><br>
-
-<textarea id="objectivesOutput" rows="10" cols="150" readonly></textarea>
-
+<div class="w-[500px]">
+    <h1 class="flex justify-center items-center rounded-t-lg bg-gray-700 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl dark:text-white py-3">Learning <span class="text-blue-600 dark:text-blue-500">&nbsp;  Objectives</span></h1>
+    <div class="w-full mb-4 border border-gray-200 rounded-b-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+        <div class="px-4 py-2 bg-white rounded-b-lg dark:bg-gray-800">
+            <label for="comment" class="sr-only">Your comment</label>
+            <textarea id="objectivesOutput" rows="8" class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Objectives...." required></textarea>
+        </div>
+    </div>
+</div>
+</div>
 <script>
     const URL = "http://127.0.0.1:8000/";
     // const URL = "https://scraper-tool.osc-fr1.scalingo.io/";
