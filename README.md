@@ -36,7 +36,7 @@ https://lectolearn.vercel.app/
 
 ## Video Demo
 
-View the Demo [App](https://storage.googleapis.com/lablab-video-submissions/clm0rplfh0000356qz1lvzwq9/raw/submission-video-x-clm0rplfh0000356qz1lvzwq9-clm63u4qa0028356r5rduvcn3_h3qs417c7.mp4)
+View the Demo [App](https://storage.googleapis.com/lablab-video-submissions/clm99g3av0000356wwlv2honr/raw/submission-video-x-clm99g3av0000356wwlv2honr-clmjei66v001i356rz9djvyu6_aa1k41n6k.mp4)
 
 ## Cover
 ![y1](https://github.com/faranbutt/Fine-Tuning-Hackathon/blob/main/cover.png)
@@ -53,7 +53,7 @@ View the Demo [App](https://storage.googleapis.com/lablab-video-submissions/clm0
 
 ## Features
 
-1. Real-time Lecture generation.
+1. Good Quality Learning Objectives Generation.
 
 2. Easy to Navigate
 
@@ -77,9 +77,9 @@ $ git clone https://github.com/faranbutt/Fine-Tuning-Hackathon
 
 - For Backend, Install dependencies using: `pip install -r requirements.txt`
 
-- To start the backend, run: `python server/server.py` or `python3 Backend/server/server.py`
+- To start the backend, run: `python server.py` or `python3 server.py`
 
-- Follow instruction given in the webpage`
+- Fill in the lecture and generate learning objectives`
 
 ## Collaborators
 
@@ -93,7 +93,7 @@ $ git clone https://github.com/faranbutt/Fine-Tuning-Hackathon
 
 ## Hackathon Link
 
-Hackathon [Submission](https://lablab.ai/event/fine-tuning-24-hours-challenge/finetuners)
+Hackathon [Submission](https://lablab.ai/event/fine-tuning-24-hours-challenge/finetuners/lec2learn-finetuning-ai-models)
 
 ## License
 
