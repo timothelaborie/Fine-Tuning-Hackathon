@@ -1,100 +1,16 @@
-import replicate
 import argparse
 import os
 import numpy as np
 np.bool = bool
-from flask import Flask
+from flask import Flask, jsonify, make_response, send_file, request
 from flask_cors import CORS
-from flask_restful import Resource
 from flask_restful import Api
-from flask import jsonify, make_response, send_file
 cwd = os.getcwd()
-import requests
-from bs4 import BeautifulSoup, Comment
-import base64
-import os
 PAT = os.environ.get("PAT")
 import re
-import random
-
-
-
-
-
-from flask import Flask, request, jsonify
-from flask_cors import CORS
-import argparse
-import os
-cwd = os.getcwd()
-import numpy as np
-np.bool = bool
-from flask import Flask
-from flask_cors import CORS
-from flask_restful import Resource
-from flask_restful import Api
-from flask import jsonify, make_response, send_file
-import requests
-from bs4 import BeautifulSoup, Comment
-import base64
-import wave
-import array
-from io import BytesIO
-import openai
-openai.api_key = os.environ.get("OPENAI_API_KEY")
-print("key:", openai.api_key)
-
-PAT = os.environ.get("PAT")
-print("PAT:", PAT)
-
-
-from clarifai_grpc.channel.clarifai_channel import ClarifaiChannel
-from clarifai_grpc.grpc.api import resources_pb2, service_pb2, service_pb2_grpc
-from clarifai_grpc.grpc.api.status import status_code_pb2
-channel = ClarifaiChannel.get_grpc_channel()
-stub = service_pb2_grpc.V2Stub(channel)
-metadata = (('authorization', 'Key ' + PAT),)
-
-
-
-port = os.environ.get("PORT")
-print(port)
-if port is None:
-    import torch
-    from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
+from transformers import AutoTokenizer, AutoModelForCausalLM
     
-
-def get_openai_response(prompt):
-    openai.api_key = os.environ.get("OPENAI_API_KEY")
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {
-                "role": "system",
-                "content": "You are a helpful assistant."
-            },
-            {
-                "role": "user",
-                "content": prompt
-            }
-            ],
-        temperature=0.1,
-        max_tokens=2000,
-        top_p=0.95,
-    )
-    text = response.choices[0].message.content
-
-    print("returning ai text:", text)
-    return text
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -168,7 +84,7 @@ def start_server():
     )
     parser.add_argument(
         "--port",
-        default=os.environ.get("PORT"),
+        default=8000,
         help="The port to run the server",
     )
     parser.add_argument(

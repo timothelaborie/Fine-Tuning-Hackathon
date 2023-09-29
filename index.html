@@ -40,7 +40,7 @@
     // const URL = "http://127.0.0.1:8000/";
     // const URL = "https://5c20-84-75-48-252.ngrok-free.app/";
     // const URL = "https://scraper-tool.osc-fr1.scalingo.io/";
-    const URL = "https://vercel-server-n7f24eza8-timothe-l.vercel.app/api";
+    const URL = "https://vercel-server-one-xi.vercel.app/api";
 
     $("#submitLecture").click(function() {
         let lecture = $("#lectureInput").val();
@@ -56,17 +56,19 @@
                     url: URL,
                     method: 'POST',
                     contentType: 'application/json',
-                    data: JSON.stringify({ lecture: lecture }),
+                    data: JSON.stringify({ func:"get_learning_objectives", lecture: lecture }),
                     success: function (data) {
                         $("#objectivesOutput").val(data.response);
                     },
                     error: function(err) {
                         console.log("error 2");
+                        alert("the request timed out, please try again")
                     }
                 });
             },
             error: function(err) {
                 console.log("error 1");
+                alert("the warmup request failed, the server is probably down")
             }
         });
     });
