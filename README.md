@@ -36,7 +36,7 @@ Copy-paste your lectures in the input, click the button, wait 20 seconds and you
 
 | Name            | Link                                   | Contribution                                   |
 | --------------- | -------------------------------------- |----- |
-| Timothé Laborie  | https://github.com/timothelaborie| Full stack coding and deployment |
+| Timothé Laborie  | https://www.linkedin.com/in/timothe-laborie/ | Full stack coding and deployment |
 | Faran Taimoor Butt | https://www.linkedin.com/in/faranbutt/ | CSS and Cover image |
 | Homan M | https://www.linkedin.com/in/homan-mirgolbabaee/ | Presentation slides |
 | Dhairya Shah | https://www.linkedin.com/in/dhairya-shah/ | Presentation slides |
