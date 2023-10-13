@@ -7,32 +7,10 @@
 
 ## Application Description
 
-Lec to Learn is the ultimate learning companion that takes the complexity out of lectures. Our AI-driven platform transforms lectures into personalized learning experiences by generating clear objectives, organizing notes, and tracking your progress. Say goodbye to information overload and hello to efficient, focused learning. Start your journey to knowledge mastery with Lec to Learn today.
-## Table of Contents
-
-<details>
-<summary>List</summary>
-
-- [Application Description](#application-description)
-- [Table of Contents](#table-of-contents)
-- [Application Deployed](#demo-app-url)
-- [Project Demo](#demo)
-- [Cover](#cover)
-- [Technology Stack](#technology-stack)
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [How to use the app](#how-to-use-the-app)
-- [Collaborators](#collaborators)
-- [Hackathon Link](#hackathon-link)
-- [References](#references)
-- [License](#license)
-
-</details>
+Lec to Learn is a tool to generate learning objectives given the text of a lecture.
 
 ## Demo App URL:
-https://lectolearn.vercel.app/
-
-
+https://timothelaborie.github.io/Fine-Tuning-Hackathon/
 
 ## Video Demo
 
@@ -45,50 +23,23 @@ View the Demo [App](https://storage.googleapis.com/lablab-video-submissions/clm9
 
 | Technology       | Description                                   |
 | ---------------- | --------------------------------------------- |
-| HTML,CSS,JAVASCRIPT      | Frontend                             |
-| Flask           | Backend framework                             |
-| Gpt4    | Open AI LLM                             |
-| Phi-1.5     |   Microsoft LLM on hugging face                           |
-| Deployment       | Vercel,Scalingo                                 |
-
-## Features
-
-1. Good Quality Learning Objectives Generation.
-
-2. Easy to Navigate
-
-
-## Screenshots
-
-![y2](https://github.com/faranbutt/Fine-Tuning-Hackathon/blob/main/webpage.png)
-
+| Phi-1.5     |   Fine-tuned model that generates the objectives                           |
+| Vercel functions       |   Backend                              |
 
 ## How to use the app
 
 **Step #1** - Clone the project
 
-```bash
-$ git clone https://github.com/faranbutt/Fine-Tuning-Hackathon
-```
-
-**Step #2**
-
-- To start the frontend, run: `index.html`
-
-- For Backend, Install dependencies using: `pip install -r requirements.txt`
-
-- To start the backend, run: `python server.py` or `python3 server.py`
-
-- Fill in the lecture and generate learning objectives`
+Copy-paste your lectures in the input, click the button, wait 20 seconds and you will see the generated learning objectives`
 
 ## Collaborators
 
-| Name            | Link                                   |
-| --------------- | -------------------------------------- |
-| Dhairya Shah | https://www.linkedin.com/in/dhairya-shah/ |
-| Faran Taimoor Butt | https://www.linkedin.com/in/faranbutt/ |
-| Homan M | https://www.linkedin.com/in/homan-mirgolbabaee/ |
-| Timothé Laborie  | https://github.com/timothelaborie|
+| Name            | Link                                   | Contribution                                   |
+| --------------- | -------------------------------------- |----- |
+| Timothé Laborie  | https://github.com/timothelaborie| Full stack coding and deployment |
+| Faran Taimoor Butt | https://www.linkedin.com/in/faranbutt/ | CSS and Cover image |
+| Homan M | https://www.linkedin.com/in/homan-mirgolbabaee/ | Presentation slides |
+| Dhairya Shah | https://www.linkedin.com/in/dhairya-shah/ | Presentation slides |
 
 
 ## Hackathon Link
