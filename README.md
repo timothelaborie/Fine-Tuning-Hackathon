@@ -7,7 +7,15 @@
 
 ## Application Description
 
+We start by obtaining all textbooks from opentextbookbc, we Process HTML to obtain the lecture and learning objectives, We then have pairs of lectures with their corresponding question groups, On the server we use Microsoft Phi 1.5 model and we fine tune it, We fine tune on the opentext data which is used so that model gets better at generating learning objectives, For the Prompt we give the lecture and learning objectives, we always start with Describe so model does not generate random data.
+
 Lec to Learn is a tool to generate learning objectives given the text of a lecture.
+- I downloaded all of the textbooks from opentextbc
+- I used regex and bs4 to extract pairs of lectures and learning objectives
+- I fine-tuned the [phi-1.5 model](https://huggingface.co/microsoft/phi-1_5) on the dataset using a custom prompt
+- [Code to download textbooks](https://github.com/timothelaborie/Fine-Tuning-Hackathon/blob/main/download.ipynb)
+- [Code to process textbooks](https://github.com/timothelaborie/Fine-Tuning-Hackathon/blob/main/process_learning_objectives.ipynb)
+- [Code to train the model](https://github.com/timothelaborie/Fine-Tuning-Hackathon/blob/main/main.ipynb)
 
 ## Demo App URL:
 https://timothelaborie.github.io/Fine-Tuning-Hackathon/
