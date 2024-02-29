@@ -18,9 +18,11 @@ Lec to Learn is a tool to generate learning objectives given the text of a lectu
 ## Demo App URL:
 https://timothelaborie.github.io/Fine-Tuning-Hackathon/
 
+Note: Due to the very high cost of hosting a custom model, the demo has been changed to use the GPT-3.5 API instead
+
 ## Video Demo
 
-View the Demo [App](https://storage.googleapis.com/lablab-video-submissions/clm99g3av0000356wwlv2honr/raw/submission-video-x-clm99g3av0000356wwlv2honr-clmjei66v001i356rz9djvyu6_aa1k41n6k.mp4)
+View the [demo video](https://storage.googleapis.com/lablab-video-submissions/clm99g3av0000356wwlv2honr/raw/submission-video-x-clm99g3av0000356wwlv2honr-clmjei66v001i356rz9djvyu6_aa1k41n6k.mp4)
 
 ## Cover
 ![y1](https://github.com/faranbutt/Fine-Tuning-Hackathon/blob/main/cover.png)
